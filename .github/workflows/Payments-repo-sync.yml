@@ -6,7 +6,7 @@ name: Repo Sync
 # while still having an internal repository for sensitive work.
 # **Who does it impact**: Open-source.
 # For more details, see https://github.com/repo-sync/repo-sync#how-it-works
-
+[![Repo Sync](https://github.com/github/docs/actions/workflows/repo-sync.yml/badge.svg?branch=main)](https://github.com/github/docs/actions/workflows/repo-sync.yml)
 on:
   workflow_dispatch:
   schedule:
