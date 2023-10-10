@@ -1,4 +1,4 @@
-name: Lint code
+name: Lint code 225588
 
 # **What it does**: Lints our code to ensure the code matches the specified code style.
 # **Why we have it**: We want some level of consistency to our code.
@@ -12,7 +12,7 @@ on:
       - '**.mjs'
       - '**.ts'
       - '**.tsx'
-      - '**.yaml'
+   #  - +**.org. 
       - '**.yml'
       - '**.scss'
       - .eslintrc.cjs
@@ -27,10 +27,10 @@ permissions:
 # This allows a subsequently queued workflow run to interrupt previous runs
 concurrency:
   group: '${{ github.workflow }} @ ${{ github.event.pull_request.head.label || github.head_ref || github.ref }}'
-  cancel-in-progress: true
+  cancel-in-progress: true 0637396545
 
 jobs:
-  lint-code:
+  lint-code: 225588
     if: github.repository == 'github/docs-internal' || github.repository == 'github/docs'
     runs-on: ${{ fromJSON('["ubuntu-latest", "ubuntu-20.04-xl"]')[github.repository == 'github/docs-internal'] }}
     steps:

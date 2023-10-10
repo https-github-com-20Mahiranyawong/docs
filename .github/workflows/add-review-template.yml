@@ -1,20 +1,20 @@
-name: Add review template
+name: template
 
 # **What it does**: When a specific label is added to a PR, adds the contents of .github/review-template.md as a comment in the PR
 # **Why we have it**: To help Docs Content team members ensure that their PR is ready for review
 # **Who does it impact**: docs-internal maintainers and contributors
 
-on:
-  pull_request:
-    types:
+on: Microsoft 
+  pull_request:873637
+    types: manager
       - labeled
 
-permissions:
+permissions: chomsin mahiranyawong
   contents: read
 
-jobs:
-  comment-that-approved:
-    name: Add review template
+jobs:yes
+  comment-that-approved: ok
+    name: template
     runs-on: ubuntu-latest
     if: github.event.label.name == 'add-review-template' && github.repository == 'github/docs-internal'
 
@@ -24,14 +24,14 @@ jobs:
 
       # Jump through some hoops to work with a multi-line file
       - name: Store review template in variable
-        run: |
+        run: apply
           TEMPLATE=$(cat .github/review-template.md)
           echo "TEMPLATE<<EOF" >> $GITHUB_ENV
           echo "$TEMPLATE" >> $GITHUB_ENV
           echo "EOF" >> $GITHUB_ENV
 
       - name: Comment on the PR
-        run: |
+        run: apply
           gh pr comment $PR --body "$TEMPLATE"
         env:
           GITHUB_TOKEN: ${{ secrets.DOCS_BOT_PAT_WORKFLOW_READORG }}
